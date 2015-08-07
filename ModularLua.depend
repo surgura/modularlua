@@ -1,0 +1,47 @@
+# depslib dependency file v1.0
+1438963541 source:d:\drive\documents\projects\modularlua\test\main.c
+	<Modular/Modular.h>
+	<ModLua/ModLua.h>
+	"ModLua/ModLua.h"
+
+1438938467 d:\drive\documents\projects\libmodular\include\modular\modular.h
+	"FactoryFunctions.h"
+
+1438954979 d:\drive\documents\projects\libmodular\include\modular\factoryfunctions.h
+	"Types.h"
+	"Factory.h"
+
+1438955133 d:\drive\documents\projects\libmodular\include\modular\types.h
+
+1438954951 d:\drive\documents\projects\libmodular\include\modular\factory.h
+	"Types.h"
+	"LinkedList.h"
+
+1433607249 d:\drive\documents\projects\libmodular\include\modular\linkedlist.h
+	"Types.h"
+
+1438960220 d:\drive\documents\projects\modularlua\include\modlua\modlua.h
+	"ModLua/Lua.h"
+
+1438963567 d:\drive\documents\projects\modularlua\include\modlua\lua.h
+	<lua.h>
+	<lauxlib.h>
+	<lua.h>
+	<stdlib.h>
+
+1433336618 c:\lua-5.3.1\src\lua.h
+	<stdarg.h>
+	<stddef.h>
+	"luaconf.h"
+
+1432143563 c:\lua-5.3.1\src\luaconf.h
+	<limits.h>
+	<stddef.h>
+	<stdint.h>
+	<assert.h>
+
+1414602677 c:\lua-5.3.1\src\lauxlib.h
+	<stddef.h>
+	<stdio.h>
+	"lua.h"
+
