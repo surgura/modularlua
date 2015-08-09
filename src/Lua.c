@@ -10,6 +10,8 @@
     Include files
 **/
 #include "Mlua/Lua.h"
+#include <lauxlib.h>
+#include <stdlib.h>
 
 void Mlua_Construct(Mdr_ModuleId moduleId, Mdr_InstanceId instanceId)
 {
@@ -39,4 +41,9 @@ void Mlua_Destruct(Mdr_ModuleId moduleId, Mdr_InstanceId instanceId)
 
     // free error message
     free(instance->errorMessage);
+}
+
+lua_State* Mlua_GetLuaState(Mlua_LuaInstance* instance)
+{
+    return instance->luaState;
 }

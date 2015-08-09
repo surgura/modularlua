@@ -1,7 +1,9 @@
 #include <Modular/Modular.h>
 #include <Mlua/Mlua.h>
+#include <stdio.h>
+#include <lauxlib.h>
 
-int Log(void* userData)
+int Log(lua_State* luaState)
 {
     printf("Test log");
     return 0;
@@ -17,17 +19,17 @@ int main()
 
     Mdr_InstanceId instanceId;
     Mdr_Instantiate(&factory, &instanceId);
+
     Mlua_LuaInstance* luaInstance = Mdr_GetModuleInstanceData(luaId, instanceId);
+    lua_State* luaState = Mlua_GetLuaState(luaInstance);
 
-    Mlua_RegisterFunction(luaInstance, "log", Log, 0);
+    //lua_pushlightuserdata(luaState, 0);
+    lua_pushcclosure(luaState, Log, 0);
+    lua_setglobal(luaState, "log");
 
-    Mlua_Result result = Mlua_ExecuteString(luaInstance, "log(\"tsest\");");
-    if (result != MLUA_SUCCESS)
+    if (luaL_dostring(luaState, "log(\"3\")"))
     {
-        if (result == MLUA_ERRMEM)
-            printf("A memory error occurred.");
-        else
-            printf("An error occurred. %s", Mlua_GetErrorMessage(luaInstance));
+        printf("%s", luaL_checkstring (luaState, -1));
     }
 
     Mdr_Destroy(&factory, instanceId);

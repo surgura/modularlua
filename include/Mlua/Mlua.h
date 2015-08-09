@@ -16,7 +16,6 @@
     Include files
 **/
 #include "Mlua/Lua.h"
-#include "Mlua/Functions.h"
 
 /**
     This is the starting point for every use of ModularLua.

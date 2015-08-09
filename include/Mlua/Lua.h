@@ -15,12 +15,7 @@
     Include files
 **/
 #include <lua.h>
-#include <lauxlib.h>
-#include <stdlib.h>
 #include <Modular/Modular.h>
-#include "Result.h"
-
-#include <stdio.h>
 
 typedef struct
 {
@@ -53,5 +48,12 @@ void Mlua_Construct(Mdr_ModuleId moduleId, Mdr_InstanceId instanceId);
     @param  instance        The id of the instance being destroyed.
 **///@todo errors
 void Mlua_Destruct(Mdr_ModuleId moduleId, Mdr_InstanceId instanceId);
+
+/**
+    Get the lua state from an instance
+    @param  instance        The instance to get it from
+    @return                 The lua state
+**/
+lua_State* Mlua_GetLuaState(Mlua_LuaInstance* instance);
 
 #endif // MLUA_LUA_H
