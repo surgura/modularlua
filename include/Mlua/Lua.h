@@ -44,14 +44,14 @@ typedef struct
     Construct function for the lua module
     @param  module          The id of this module.
     @param  instance        The id of the instance being created.
-**/
+**///@todo errors
 void Mlua_Construct(Mdr_ModuleId moduleId, Mdr_InstanceId instanceId);
 
 /**
     Destruct function for the lua module
     @param  module          The id of this module.
     @param  instance        The id of the instance being destroyed.
-**/
+**///@todo errors
 void Mlua_Destruct(Mdr_ModuleId moduleId, Mdr_InstanceId instanceId);
 
 #endif // MLUA_LUA_H

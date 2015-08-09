@@ -14,9 +14,24 @@
 
 typedef enum
 {
+    /**
+        Everything went as expected.
+    **/
     MLUA_SUCCESS,
-    MLUA_EXECUTE_ERROR,
-    MLUA_ERROR_ALLOC_FAIL
+    /**
+        Allocing memory was needed but it failed.
+    **/
+    MLUA_ERRMEM,
+    /**
+        Syntax error in provided code.
+        An error message is available.
+    **/
+    MLUA_ERRSYNTAX,
+    /**
+        Runtime error.
+        An error message is available.
+    **/
+    MLUA_ERRRUN
 } Mlua_Result;
 
 #endif // MLUA_RESULT_H
