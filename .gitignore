@@ -30,3 +30,8 @@
 
 # Debug files
 *.dSYM/
+/*.layout
+/*.cbp
+/*.depend
+/*.cbp
+/*.depend

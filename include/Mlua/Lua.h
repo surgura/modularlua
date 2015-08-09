@@ -11,15 +11,16 @@
 **/
 #ifndef MLUA_LUA_H
 #define MLUA_LUA_H
-
 /**
     Include files
 **/
 #include <lua.h>
 #include <lauxlib.h>
-#include <lua.h>
-
 #include <stdlib.h>
+#include <Modular/Modular.h>
+#include "Result.h"
+
+#include <stdio.h>
 
 typedef struct
 {
@@ -28,7 +29,15 @@ typedef struct
 
 typedef struct
 {
+    /**
+        The lua state for this instance.
+    **/
     lua_State* luaState;
+
+    /**
+        The description of the last error that occurred.
+    **/
+    char* errorMessage;
 } Mlua_LuaInstance;
 
 /**
@@ -36,20 +45,13 @@ typedef struct
     @param  module          The id of this module.
     @param  instance        The id of the instance being created.
 **/
-void Mlua_Construct(Mdr_ModuleId moduleId, Mdr_InstanceId instanceId)
-{
-    Mlua_LuaInstance* instance = Mdr_GetModuleInstanceData(moduleId, instanceId);
-    instance->luaState = luaL_newstate();
-    printf("created lua state");
-}
+void Mlua_Construct(Mdr_ModuleId moduleId, Mdr_InstanceId instanceId);
 
 /**
     Destruct function for the lua module
     @param  module          The id of this module.
     @param  instance        The id of the instance being destroyed.
 **/
-void Mlua_Destruct(Mdr_ModuleId module, Mdr_InstanceId instance)
-{
-}
+void Mlua_Destruct(Mdr_ModuleId moduleId, Mdr_InstanceId instanceId);
 
 #endif // MLUA_LUA_H

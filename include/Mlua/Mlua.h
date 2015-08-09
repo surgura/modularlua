@@ -9,12 +9,18 @@
 /**
     Header guard
 **/
-#ifndef MLUA_MOD_LUA_H
-#define MLUA_MOD_LUA_H
+#ifndef MLUA_MLUA_H
+#define MLUA_MLUA_H
 
 /**
     Include files
 **/
-#include "ModLua/Lua.h"
+#include "Mlua/Lua.h"
+#include "Mlua/Functions.h"
 
-#endif // MLUA_MOD_LUA_H
+/**
+    This is the starting point for every use of ModularLua.
+    Include this file, and you have everything ModularLua has to offer.
+**/
+
+#endif // MLUA_MLUA_H
