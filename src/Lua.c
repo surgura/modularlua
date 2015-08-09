@@ -23,8 +23,6 @@ void Mlua_Construct(Mdr_ModuleId moduleId, Mdr_InstanceId instanceId)
 
     // initialize error message to 0 as there is no message
     instance->errorMessage = 0;
-
-    printf("created lua state\n");
 }
 
 /**
